@@ -60,6 +60,7 @@ List<dynamic> fooDynamic = new List<dynamic>()
     new { Name = "assfasfasfsgaga", SomeProp = SomeEnum.SomeValue1, Birthdate = cache },
     new { Name = "assfasfasfsgaga", SomeProp = SomeEnum.SomeValue1, Birthdate = cache },
 };
+    
 using (ExcelWriter excelWriter = new ExcelWriter())
 {
     string path = @"Sample.xls"; //Default saves to My Documents
