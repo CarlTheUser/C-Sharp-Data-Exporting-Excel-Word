@@ -178,8 +178,7 @@ namespace DataExporting
         public ExcelWriter AppendTable<TData>(IEnumerable<TData> source, string title = "") where TData : class
         {
             TData check = source.ToArray()[0];
-
-
+            
             Dictionary<int, FieldData> fieldCache = new Dictionary<int, FieldData>();
 
             Type type = check.GetType();
@@ -209,6 +208,10 @@ namespace DataExporting
 
             if (fieldCache.Count != 0)
             {
+                if (_currentColumn <= 0) ResetColumn();
+
+                if (_currentRow <= 0) ResetRow();
+
                 int tableStartColumn = _currentColumn;
 
                 Excel.Range tableBegin = (Excel.Range)_currentWorksheet.Cells[_currentRow, tableStartColumn];
