@@ -201,7 +201,7 @@ namespace DataExporting
 
                     if (fieldDisplay == null) fieldCache.Add(dictionaryIndex++, new FieldData(property));
                     else if (fieldDisplay.IsIncluded) fieldCache.Add(dictionaryIndex++, new FieldData(property, (fieldDisplay.Title != string.Empty ? fieldDisplay.Title : property.Name)));
-                }
+                } 
             }
 
             propertyCount = fieldCache.Count;
